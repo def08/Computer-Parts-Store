@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
+import { useCart } from "../provider/Provider";
 
 export const Storepage1 = () =>{
-    const [Cart, setCart] = useState();
-
+    const { Cart, setCart } = useCart();
     const [partsList, setpartsList] = useState([
         {
             PartName: 'Textured Keyboard KeyCaps',
@@ -26,46 +26,41 @@ export const Storepage1 = () =>{
             Price: '20',
             Quantity: '2',
         }
-    ])
+    ]);
 
     
 
-    const AddtoCart = (Part) =>{
-        setCart ([...Cart, Part])
-        let Itemincart = false;
+    const AddtoCart = (part) =>{
+        setCart ([...Cart, part])
+        let Partincart = false;
         Cart.filter((i)=>{
-            if (i.PartName == Part.PartName){
-                Itemincart = true;
+            if (i.PartName == part.PartName){
+                Partincart = true;
             }
         })
-        updateCart(Part)
-    }
+        updateCart(part)
+    };
 
-    const updateCart = (Part) =>{
-        let previewCart = [];
+    const updateCart = (part) =>{
+        let tempCart = [];
         Cart.forEach((element)=> {
-            if(element.PartName == Part.PartName){
-                element.total = element.total - 1;
-            }
-            previewCart.push(element)
-        })
+            if(element.PartName == part.PartName) element.total = element.total - 1;
+            tempCart.push(element)
+        });
+        setpartsList(tempCart);
     }
 
     return(
         <div>
-            <div>
-                <div className="navigation">
-                    Computer Parts Store
-                    <div style={{float: 'right',position: 'relative'}}>
-                        <a href='./Cart.js' style={{float: 'right', position: 'relative'}}>
-                            <BsCart4/>
-                        </a>
-                        <div className="Cartcount">
-                            {Cart.length}
-                        </div>
+            <div className="navigation">
+                Computer Parts Store
+                <div style={{float: 'right',position: 'relative'}}>
+                    <a href='./Cart.js' style={{float: 'right', position: 'relative'}}>
+                       <BsCart4/>
+                    </a>
+                    <div className="Cartcount">
+                        {Cart.length}
                     </div>
-                    
-                    
                 </div>
             </div>
             {partsList.map((part, index)=>(
@@ -74,7 +69,7 @@ export const Storepage1 = () =>{
                     <div> Name: {part.PartName} </div>
                     <div> {"$"} {part.Price} </div>
                     <div> Quantity: {part.Quantity} </div>
-                    <button id='add' className="button" onClick={AddtoCart()}>Add to Cart</button> 
+                    <button id='add' className="button" onClick={()=>AddtoCart(part)}>Add to Cart</button> 
                 </div> 
                   
             ))}
