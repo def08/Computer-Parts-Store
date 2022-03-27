@@ -1,10 +1,6 @@
 import { BsBoxArrowLeft } from "react-icons/bs";
-import { Storepage1 } from "Storepage.js";
 
 export const Cartpage1 = () => {
-function ItemsInCart(state='Added to Cart') {
-    
-}
     return(
         <div>
             <div>
