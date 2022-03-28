@@ -9,7 +9,7 @@ function App() {
     <BrowserRouter>
       <CartWrapper>
         <Routes>
-          <Route path='/store' element={<Storepage1/>} />
+          <Route path='/' element={<Storepage1/>} />
           <Route path='/cart' element={<Cartpage1/>} />
         </Routes>      
       </CartWrapper>

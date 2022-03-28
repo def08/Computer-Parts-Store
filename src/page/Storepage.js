@@ -36,12 +36,6 @@ export const Storepage1 = () =>{
 
     const AddtoCart = (part) =>{
         setCart ([...Cart, part])
-        let Partincart = false;
-        Cart.filter((i)=>{
-            if (i.index == part.id){
-                Partincart = true;
-            }
-        })
         updateCart(part)
     };
 
@@ -52,7 +46,7 @@ export const Storepage1 = () =>{
             tempCart.push(part2)
         });
         setpartsList(tempCart);
-    }
+    };
 
     return(
         <div>
