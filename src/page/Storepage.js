@@ -10,21 +10,25 @@ export const Storepage1 = () =>{
             Image:'',
             Price: '15',
             Quantity: '13',
+            id: '1'
         },{
             PartName: 'Female USB B Port',
             Image:'',
             Price: '15',
             Quantity: '5',
+            id: '2'
         },{
             PartName: 'USB C Port',
             Image:'',
             Price: '30',
             Quantity: '10',
+            id: '3'
         },{
             PartName: 'LED light strips',
             Image:'',
             Price: '20',
             Quantity: '2',
+            id: '4'
         }
     ]);
 
@@ -34,7 +38,7 @@ export const Storepage1 = () =>{
         setCart ([...Cart, part])
         let Partincart = false;
         Cart.filter((i)=>{
-            if (i.PartName == part.PartName){
+            if (i.index == part.id){
                 Partincart = true;
             }
         })
@@ -43,9 +47,9 @@ export const Storepage1 = () =>{
 
     const updateCart = (part) =>{
         let tempCart = [];
-        Cart.forEach((element)=> {
-            if(element.PartName == part.PartName) element.total = element.total - 1;
-            tempCart.push(element)
+        Cart.forEach((part2)=> {
+            if(part2.id == part.id) part2.total = part2.total - 1;
+            tempCart.push(part2)
         });
         setpartsList(tempCart);
     }
