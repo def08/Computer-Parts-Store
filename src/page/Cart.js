@@ -1,6 +1,8 @@
 import { BsBoxArrowLeft } from "react-icons/bs";
+import { useCart } from "../provider/Provider";
 
 export const Cartpage1 = () => {
+    const {Cart} = useCart();
     return(
         <div>
             <div>
@@ -11,7 +13,7 @@ export const Cartpage1 = () => {
                     </a>
                 </div>
                 <div className="Cartitems">
-
+                    {}
                 </div>
             </div>
         </div>

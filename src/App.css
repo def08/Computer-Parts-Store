@@ -13,21 +13,19 @@
   background-color: darkgray;
   color: white;
   font-size: 32px;
-  padding: 10px;
+  padding: 10px 0 10px 0;
   margin-bottom: 30px;
+  padding-right: 10px;
   display: block;
 }
 .Cartcount{
   background-color: red;
   box-shadow: 2px 2px 0px black;
   padding: 4px;
-  font-size: 30px;
-  float: right;
+  font-size: 15px;
   position: absolute;
   border-radius: 40%;
-  margin: 0px 0px 0px 5px;
-  text-align: center;
-  display: inline-flex;
+  top: -12px;
 }
 .button {
   display: inline-flex;

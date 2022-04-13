@@ -41,8 +41,8 @@ export const Storepage1 = () =>{
 
     const updateCart = (part) =>{
         let tempCart = [];
-        Cart.forEach((part2)=> {
-            if(part2.id == part.id) part2.total = part2.total - 1;
+        partsList.forEach((part2)=> {
+            if(part2.id === part.id) part2.total = part2.total - 1;
             tempCart.push(part2)
         });
         setpartsList(tempCart);
@@ -53,7 +53,7 @@ export const Storepage1 = () =>{
             <div className="navigation">
                 Computer Parts Store
                 <div style={{float: 'right',position: 'relative'}}>
-                    <a href='./Cart.js' style={{float: 'right', position: 'relative'}}>
+                    <a href='/cart'>
                        <BsCart4/>
                     </a>
                     <div className="Cartcount">

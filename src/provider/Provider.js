@@ -5,19 +5,21 @@ const ContextProvider = createContext();
 
 export const useCart = () => useContext(ContextProvider);
 
-export const CartWrapper = ({Children}) => {
+export const CartWrapper = ({children}) => {
     const [Cart, setCart] = useState([]);
 
     useEffect(()=> {
-            if (Cart.length){
-                window.localStorage.setPart('Cart', JSON.stringify(Cart))
-                const CartPart = window.localStorage.getItem('Cart')
-                if (CartPart) {
-                    setCart(JSON.parse(CartPart))
-                    
-                }
-            }
-    }, [Cart]);
+        const CartPart = window.localStorage.getItem('Cart');
+        if (CartPart) {
+            setCart(JSON.parse(CartPart))
+        }
+    }, []);
+
+    useEffect(()=>{
+        if (Cart.length){
+            window.localStorage.setItem('Cart', JSON.stringify(Cart));
+        }
+    }, [Cart])
 
     const values = {
         Cart, 
@@ -26,7 +28,7 @@ export const CartWrapper = ({Children}) => {
 
     return(
         <ContextProvider.Provider value={values}>
-            {Children}
+            {children}
         </ContextProvider.Provider>
     )
 }

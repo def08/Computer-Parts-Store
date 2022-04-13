@@ -10,8 +10,8 @@ function App() {
       <CartWrapper>
         <Routes>
           <Route path='/' element={<Storepage1/>} />
-          <Route path='/cart' element={<Cartpage1/>} />
-        </Routes>      
+          <Route path="/cart" element={<Cartpage1/>} />
+        </Routes>
       </CartWrapper>
     </BrowserRouter>
   );
