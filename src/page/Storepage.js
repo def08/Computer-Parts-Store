@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { useCart } from "../provider/Provider";
+import { useNavigate } from "react-router-dom";
 
 export const Storepage1 = () =>{
     const { Cart, setCart } = useCart();
+    const navigate = useNavigate();
     const [partsList, setpartsList] = useState([
         {
             PartName: 'Textured Keyboard KeyCaps',
@@ -53,7 +55,7 @@ export const Storepage1 = () =>{
             <div className="navigation">
                 Computer Parts Store
                 <div style={{float: 'right',position: 'relative'}}>
-                    <a href='/cart'>
+                    <a onClick={()=>navigate('cart')}>
                        <BsCart4/>
                     </a>
                     <div className="Cartcount">
