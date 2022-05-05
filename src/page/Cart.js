@@ -6,30 +6,33 @@ export const Cartpage1 = () => {
     const { Cart, setCart, partsList, setpartsList } = useCart();
     const navigate = useNavigate();
 
-    // const updateCart = (part) =>{
-    //     let tempCart = [];
-    //     partsList.forEach((part2)=> {
-    //         if(part2.id === part.id);
-    //         console.log(tempCart)
-    //         tempCart.push(part2)
-    //     });
-    //     setpartsList(tempCart);
-    // };
+
+    const updateCart = (part) =>{
+        let tempCart = [];
+        Cart.forEach((part2)=> {
+            if(part2.id === part.id) {
+                part2['qty'] = part2['qty'] - 1
+
+            }
+            tempCart.push(part2)
+        });
+        setCart(tempCart);
+    };
 
     const RemovefromCart = (part) =>{
         const tempCart = Cart.filter((part2) => part2.id !== part.id);
-        // console.log(tempCart)
+        window.alert("Item removed from cart");
         setCart ([...tempCart])        
     }
 
     const Remove1fromCart = (part) =>{
-        const tempCart = Cart.filter((part2) => part2.id !== part.id);
-        // console.log(tempCart)
-        setCart ([...tempCart])        
+        const partInCart = Cart.filter((part2) => part2.id !== part.id);
+        if (part.qty > 1) {
+            return updateCart(part)
+        }
+        setCart ([...partInCart])            
     }
-    
-    //     
-    // };
+
     return(
         <div>
             <div>
