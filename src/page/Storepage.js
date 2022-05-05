@@ -4,50 +4,29 @@ import { useCart } from "../provider/Provider";
 import { useNavigate } from "react-router-dom";
 
 export const Storepage1 = () =>{
-    const { Cart, setCart } = useCart();
+    const { Cart, setCart, partsList, setpartsList } = useCart();
     const navigate = useNavigate();
-    const [partsList, setpartsList] = useState([
-        {
-            PartName: 'Textured Keyboard KeyCaps',
-            Image:'',
-            Price: '15',
-            Quantity: '13',
-            id: '1'
-        },{
-            PartName: 'Female USB B Port',
-            Image:'',
-            Price: '15',
-            Quantity: '5',
-            id: '2'
-        },{
-            PartName: 'USB C Port',
-            Image:'',
-            Price: '30',
-            Quantity: '10',
-            id: '3'
-        },{
-            PartName: 'LED light strips',
-            Image:'',
-            Price: '20',
-            Quantity: '2',
-            id: '4'
-        }
-    ]);
-
     
 
     const AddtoCart = (part) =>{
+        const partInCart = Cart.filter((part2) => part2.id === part.id);
+        if (partInCart.length) {
+            return updateCart(part)
+        }
+        part['qty'] = 1
         setCart ([...Cart, part])
-        updateCart(part)
     };
 
     const updateCart = (part) =>{
         let tempCart = [];
-        partsList.forEach((part2)=> {
-            if(part2.id === part.id) part2.total = part2.total - 1;
+        Cart.forEach((part2)=> {
+            window.alert("Item added to Cart");
+            if(part2.id === part.id) {
+                part2['qty'] = part2['qty'] + 1
+            }
             tempCart.push(part2)
         });
-        setpartsList(tempCart);
+        setCart(tempCart);
     };
 
     return(
@@ -55,7 +34,7 @@ export const Storepage1 = () =>{
             <div className="navigation">
                 Computer Parts Store
                 <div style={{float: 'right',position: 'relative'}}>
-                    <a onClick={()=>navigate('cart')}>
+                    <a onClick={()=>navigate('/cart')}>
                        <BsCart4/>
                     </a>
                     <div className="Cartcount">
