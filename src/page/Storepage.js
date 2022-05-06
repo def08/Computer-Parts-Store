@@ -1,7 +1,7 @@
-import { useState } from "react";
 import { BsCart4 } from "react-icons/bs";
 import { useCart } from "../provider/Provider";
 import { useNavigate } from "react-router-dom";
+
 
 export const Storepage1 = () =>{
     const { Cart, setCart, partsList, setpartsList } = useCart();
@@ -12,6 +12,7 @@ export const Storepage1 = () =>{
         const partInCart = Cart.filter((part2) => part2.id === part.id);
         if (partInCart.length) {
             return updateCart(part)
+            
         }
         part['qty'] = 1
         setCart ([...Cart, part])

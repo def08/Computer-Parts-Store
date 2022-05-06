@@ -1,3 +1,12 @@
+body{
+  background-image: url('https://www.act4apps.org/wp-content/uploads/2020/05/computer-repairs.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -130px;
+}
+
+
+
 .itemcards {
   background-color: darksalmon;
   display: inline-block;
@@ -10,22 +19,31 @@
   margin: 8px;
 }
 .navigation{
-  background-color: darkgray;
-  color: white;
+  background-color: rgb(17, 86, 183);
+  background-image: url('https://www.kettering.com.au/wp-content/uploads/Electronics-Banner.jpg');
+  background-position-x: -300px;
+  background-position-y: 1130px;
+  color: rgb(255, 255, 255);
   font-size: 32px;
+  font-weight: 500;
   padding: 10px 0 10px 0;
   margin-bottom: 30px;
   padding-right: 10px;
   display: block;
+  border-color: black;
+  border-bottom-style: groove;
+  border-top: 10px;
 }
 .Cartcount{
-  background-color: red;
-  box-shadow: 2px 2px 0px black;
-  padding: 4px;
-  font-size: 15px;
+  background-color: rgb(255, 149, 0);
+  padding: 2px;
+  font-size: 12px;
   position: absolute;
-  border-radius: 40%;
-  top: -12px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 20%;
+  top: -6px;
+  right: 8px;
 }
 .button {
   display: inline-flex;

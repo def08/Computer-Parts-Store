@@ -5,14 +5,11 @@ import { useCart } from "../provider/Provider";
 export const Cartpage1 = () => {
     const { Cart, setCart, partsList, setpartsList } = useCart();
     const navigate = useNavigate();
-
-
     const updateCart = (part) =>{
         let tempCart = [];
         Cart.forEach((part2)=> {
             if(part2.id === part.id) {
                 part2['qty'] = part2['qty'] - 1
-
             }
             tempCart.push(part2)
         });
@@ -34,7 +31,7 @@ export const Cartpage1 = () => {
     }
 
     return(
-        <div>
+        <div className="page">
             <div>
                 <div className="navigation">
                     Computer Parts Store
