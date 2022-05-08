@@ -45,7 +45,7 @@ export const Storepage1 = () =>{
             </div>
             {partsList.map((part, index)=>(
                 <div className="itemcards" key={index}>
-                    <img src={part.Image} alt=""/>
+                    <div> {part.Image} </div>
                     <div> Name: {part.PartName} </div>
                     <div> {"$"} {part.Price} </div>
                     <div> Quantity: {part.Quantity} </div>
