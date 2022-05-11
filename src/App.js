@@ -10,6 +10,7 @@ function App() {
       <CartWrapper>
         <Routes>
           <Route path='/' element={<Navigate to={'/store'}/>} />
+          <Route path='/Computer-Parts-Store' element={<Navigate to={'/store'}/>} />
           <Route path='/store' element={<Storepage1/>} />
           <Route path="/cart" element={<Cartpage1/>} />
         </Routes>
