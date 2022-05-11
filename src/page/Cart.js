@@ -41,7 +41,7 @@ export const Cartpage1 = () => {
                 </div>
                 {Cart.map((part, index)=>(
                     <div className="itemcards" key={index}>
-                        <img src={part.Image} alt=""/>
+                        <img width="240px" height="200px" src={part.Image} alt="Parts"/>
                         <div> Name: {part.PartName} </div>
                         <div> {"$"} {part.Price} </div>
                         <div> Quantity: {part.qty} </div>
