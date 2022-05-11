@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Computer-Parts-Store/static/css/main.a25575d9.css",
+    "main.js": "/Computer-Parts-Store/static/js/main.189854ab.js",
+    "static/js/787.ec704a7a.chunk.js": "/Computer-Parts-Store/static/js/787.ec704a7a.chunk.js",
+    "static/media/keycaps.jpg": "/Computer-Parts-Store/static/media/keycaps.f8bcdce65086acca8dbc.jpg",
+    "static/media/lightstrips.jpg": "/Computer-Parts-Store/static/media/lightstrips.c462d5c0b164bdc3cd87.jpg",
+    "static/media/cfemaleport.jpg": "/Computer-Parts-Store/static/media/cfemaleport.6ce5c0517ca9dc91a877.jpg",
+    "static/media/bfemaleport.jpg": "/Computer-Parts-Store/static/media/bfemaleport.3ea5ccf2d87473490df3.jpg",
+    "index.html": "/Computer-Parts-Store/index.html",
+    "main.a25575d9.css.map": "/Computer-Parts-Store/static/css/main.a25575d9.css.map",
+    "main.189854ab.js.map": "/Computer-Parts-Store/static/js/main.189854ab.js.map",
+    "787.ec704a7a.chunk.js.map": "/Computer-Parts-Store/static/js/787.ec704a7a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a25575d9.css",
+    "static/js/main.189854ab.js"
+  ]
+}
